@@ -35,7 +35,7 @@ This project addresses the challenges of high-dimensional IoT traffic data for I
 
 **Model Performance Comparison (Multi-Class Classification):**  
 
-![Multi-Class Classification Performance](imags/Multiclass_Comparaison.png)  
+![Multi-Class Classification Performance](imags/Multiclass_Comparison.png)  
 
 ✅ **Best Models (Multi-Class):**  
 - **Subcategory LDA components** → Best overall F1-score (**0.996**) with efficient training.  
