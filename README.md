@@ -5,6 +5,38 @@ This project addresses the challenges of high-dimensional IoT traffic data for I
 
 ---
 
+## 📂 Dataset: IoTID20
+The **IoTID20 dataset** is a publicly available benchmark for IoT intrusion detection. It contains traffic generated from IoT devices under both normal conditions and attack scenarios such as:
+
+- DoS/DDoS attacks  
+- Mirai botnet activity  
+- Scanning attacks  
+- MITM ARP spoofing  
+
+Each row represents a network flow with features including **packet length, duration, protocol type, and statistical properties**. The target variables include:
+
+- **Label** → Normal (0) or Anomaly (1)  
+- **Category (Cat)** → Attack type group  
+- **Sub-Category (Sub_Cat)** → Specific attack sub-type  
+
+---
+
+## ⚙️ Preprocessing & Dimensionality Reduction
+
+1. **Data Cleaning**  
+   - Removed duplicate rows and irrelevant columns (`Flow_ID`, IPs, Ports, Timestamp).  
+   - Converted categorical data to numerical values (binary labels, one-hot encoding for categories/subcategories).  
+   - Replaced infinities with column max/min and scaled numerical features to [0,1].
+
+2. **Dimensionality Reduction**  
+   - **PCA** → Reduces redundancy by capturing main variance directions.  
+   - **LDA** → Projects data to maximize class separability for Label, Category, or Subcategory.  
+   - **Hybrid PCA+LDA** → PCA first reduces dimensionality, then LDA enhances discriminative power.  
+
+This preprocessing pipeline ensures computational efficiency while preserving essential information for accurate classification.
+
+---
+
 ## 0️⃣|1️⃣ Binary Classification Results
 
 **Model Explanations:**
